@@ -1,0 +1,20 @@
+{
+  "name": "tiktok-scraper",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "scrape:shop": "node src/controllers/scrapeController.js",
+    "daily-job": "node src/jobs/dailyScrapeJob.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "mongoose": "^8.3.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.14.1",
+    "playwright": "^1.52.0",
+    "puppeteer": "^22.15.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}
