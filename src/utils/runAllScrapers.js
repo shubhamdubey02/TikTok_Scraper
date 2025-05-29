@@ -1,13 +1,9 @@
-const { runBehanceScraper } = require("../scrapers/behance");
-const { runClutchScraper } = require("../scrapers/clutch");
-const { runDribbbleScraper } = require("../scrapers/dribbble");
-const { runGoodFirmsScraper } = require("../scrapers/goodfirms");
+const scrapeCategories = require('../scrapers/Categories');
+const scrapeFashionAccessories = require('../scrapers/subCategories');
+const { closeBrowser } = require('../scrapers/puppeteerBrowser');
 
-async function runAllScrapers() {
-    runClutchScraper();
-    runGoodFirmsScraper();
-    runDribbbleScraper();
-    runBehanceScraper();
-}
-
-module.exports = { runAllScrapers };
+(async () => {
+    await scrapeCategories();
+    await scrapeFashionAccessories();
+    await closeBrowser(); // Only close after all tasks are done
+})();
