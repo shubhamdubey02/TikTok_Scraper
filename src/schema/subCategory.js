@@ -1,13 +1,13 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-    class subCategory extends Model {
+    class SubCategory extends Model {
         static associate(models) {
             // define associations here if needed
         }
     }
 
-    subCategory.init({
+    SubCategory.init({
         id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
@@ -39,10 +39,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     }, {
         sequelize,
-        modelName: 'subCategory',
-        tableName: 'categories',
+        modelName: 'SubCategory',
         timestamps: true,
     });
 
-    return subCategory;
+    return SubCategory;
 };
